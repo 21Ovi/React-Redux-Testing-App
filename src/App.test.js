@@ -3,14 +3,16 @@ import App from "./App";
 
 test("renders learn react link", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
+  const linkElement = screen.getByText("Hi there");
   expect(linkElement).toBeInTheDocument();
 });
 
 // it("render wihtout crashing", () => {
 //   const div = document.createElement("div");
-//   ReactDOM.render(<App />, div);
+//   render(<App />, div);
 
 //   expect(div.innerHTML).toContain("Hi there");
 
-//   ReactDOM.unmountComponentAtNode(div);
+//   // eslint-disable-next-line no-undef
+//   unmountComponentAtNode(div);
+// });
