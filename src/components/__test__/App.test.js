@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "../App";
 
+import "setupTest";
+
 it("Shows a comment box", () => {
   const div = document.createElement("div");
 
