@@ -2,7 +2,7 @@ import React from "react";
 import { mount } from "enzyme";
 
 import CommentBox from "../CommentBox";
-import "setupTest";
+import "../../setupTest";
 
 it("Has a text area and a button", () => {
   const wrapped = mount(<CommentBox />);
