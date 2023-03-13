@@ -12,5 +12,8 @@ it("can fetch a list of comments and display them", () => {
     </Root>
   );
   //  find the 'fetch comments' byutton and click it
+  wrapped.at(".fetch-comments").simulate("click");
+
   // Expect ti find a list of comments!
+  expect(wrapped.find("li").length).toEqual(500);
 });
