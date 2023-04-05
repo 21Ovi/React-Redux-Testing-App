@@ -1,3 +1,4 @@
+/* eslint-disable testing-library/await-async-utils */
 import "setupTest";
 
 import React from "react";
