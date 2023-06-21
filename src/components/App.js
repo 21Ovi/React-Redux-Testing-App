@@ -1,13 +1,14 @@
 import React from "react";
+import { Route, Routes } from "react-router-dom";
 import CommentBox from "components/CommentBox";
 import CommentList from "components/CommentList";
 
 const App = () => {
   return (
-    <div>
-      <CommentBox />
-      <CommentList />
-    </div>
+    <Routes>
+      <Route path="/" exact element={<CommentList />} />
+      <Route path="/post" element={<CommentBox />} />
+    </Routes>
   );
 };
 
