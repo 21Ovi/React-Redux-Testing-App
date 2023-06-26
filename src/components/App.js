@@ -1,10 +1,17 @@
 import React, { Component } from "react";
 import { Link, Route, Routes } from "react-router-dom";
+import { connect } from "react-redux";
 import CommentBox from "components/CommentBox";
 import CommentList from "components/CommentList";
 
 class App extends Component {
-  renderButton() {}
+  renderButton() {
+    if (this.props.auth) {
+      return <button>Sign out</button>;
+    } else {
+      return <button>Sign in</button>;
+    }
+  }
 
   renderHeader() {
     return (
@@ -22,12 +29,19 @@ class App extends Component {
 
   render() {
     return (
-      <Routes>
-        <Route path="/" exact element={<CommentList />} />
-        <Route path="/post" element={<CommentBox />} />
-      </Routes>
+      <React.Fragment>
+        {this.renderHeader()}
+        <Routes>
+          <Route path="/" exact element={<CommentList />} />
+          <Route path="/post" element={<CommentBox />} />
+        </Routes>
+      </React.Fragment>
     );
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return { auth: state.auth };
+}
+
+export default connect(mapStateToProps)(App);
